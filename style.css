@@ -187,9 +187,13 @@ body {
 .benefit .item {
   width: 270px;
 }
-.benefit .icon {
+.benefit-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
   background-color: var(--color-background-secondary);
-  padding: 25px 100px;
+
   border-radius: 4px;
   margin-bottom: 30px;
 }
@@ -251,7 +255,7 @@ body {
   line-height: calc(19 / 16);
   color: var(--color-main-text);
   letter-spacing: 0.03em;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 .social-list {
   display: flex;
@@ -263,18 +267,20 @@ body {
   height: 44px;
 }
 .social-link {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   color: var(--color-icon-link);
 }
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
   color: var(--color-secondary);
   background-color: var(--color-logo);
 }
 .social-list .icon {
-  height: 44px;
   fill: currentColor;
 }
 
@@ -283,25 +289,24 @@ body {
   display: flex;
   gap: 30px;
 }
-.client-list .item {
-  width: 170px;
-  height: 92px;
-}
+
 .client-link {
   text-align: center;
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  outline: 1px solid var(--color-icon-link);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--color-icon-link);
   border-radius: 4px;
   color: var(--color-icon-link);
 }
-.client-link:hover {
+.client-link:hover,
+.client-link:focus {
   color: var(--color-logo);
+  border: 1px solid var(--color-logo);
 }
 .client-list .icon {
-  max-width: 170px;
-  height: 92px;
   fill: currentColor;
 }
 /* footer */
@@ -317,7 +322,7 @@ body {
   display: flex;
   align-items: baseline;
 }
-.footer-box {
+.footer-box:not(:first-child) {
   margin-left: 93px;
 }
 .page-footer .logo {
@@ -354,12 +359,15 @@ body {
   text-transform: uppercase;
 }
 .footer-box .social-link {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--color-secondary);
 }
-.footer-box .social-link:hover {
+.footer-box .social-link:hover,
+.footer-box .social-link:focus {
   background-color: var(--color-logo);
 }
 /* portfolio main */
@@ -395,8 +403,9 @@ body {
 .sort-btn:focus {
   background-color: var(--color-logo);
   color: var(--color-secondary);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-border-radius: 4px;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  
 }
 .project {
   display: flex;
@@ -408,14 +417,14 @@ border-radius: 4px;
   margin-left: var(--project-cart-gap);
   margin-top: var(--project-cart-gap);
 }
-.project-link{
+.project-link {
   display: block;
   min-width: 370px;
   min-height: 404px;
-   
 }
-.project-link:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+.project-link:hover,.project-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .project-name {
   color: var(--color-primary);
